@@ -54,10 +54,10 @@ export default function MachineStatus() {
               </div>
             </div>
             <div className="col-span-1">
-              <div>unit</div>
-              <div>unit</div>
-              <div>unit</div>
-              <div>unit</div>
+              <div>%</div>
+              <div>%</div>
+              <div>%</div>
+              <div>%</div>
             </div>
           </div>
         </div>

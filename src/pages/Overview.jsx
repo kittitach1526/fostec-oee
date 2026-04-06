@@ -8,6 +8,24 @@ import MachineStatus from "../sub_pages/MachineStatus"
 
 // ... ใน Component ของคุณ
 
+let notify = [
+  {
+    level: "High",
+    message: "Machine 1 is down",
+    timestamp: "2024-06-01 10:00:00",
+  },
+  {
+    level: "High",
+    message: "Machine 1 is down",
+    timestamp: "2024-06-01 10:00:00",
+  },
+  {
+    level: "High",
+    message: "Machine 1 is down",
+    timestamp: "2024-06-01 10:00:00",
+  },
+];
+
 function Home() {
   let value3 = 2;
   const navigate = useNavigate();
@@ -96,6 +114,54 @@ function Home() {
         {/* ----------------------------------------End of 4 Gauge------------------------------------------- */}
       </div>
 
+      {/* ----------------------------------------Notification------------------------------------------- */}
+      <div className="grid grid-cols-2">
+        <div className="max-w-full bg-white mt-10 rounded-2xl p-4">
+          {/* <div className="flex justify-start mt-10 max-w-full bg-gray-700 rounded-2xl p-2">
+          <div className="ml-10">
+            <h1 className="text-2xl text-white font-bold">ALERT</h1>
+          </div>
+        </div> */}
+          <div>
+            <div className="p-4 bg-gray-100 rounded-lg shadow-inner">
+              <h2 className="text-lg font-bold mb-4">Notifications</h2>
+
+              <div className="space-y-3">
+                {notify.map((item, index) => (
+                  // อย่าลืมใส่ key ให้กับ element นอกสุดในลูป
+                  <div
+                    key={index}
+                    className={`p-3 border-l-4 rounded bg-white shadow-sm flex justify-between items-center ${item.level === "High" ? "border-red-500" : "border-yellow-500"
+                      }`}
+                  >
+                    <div>
+                      <p className="font-semibold text-gray-800">{item.message}</p>
+                      <p className="text-xs text-gray-500">{item.timestamp}</p>
+                    </div>
+
+                    <span className={`px-2 py-1 rounded text-xs font-bold ${item.level === "High" ? "bg-red-100 text-red-600" : "bg-yellow-100 text-yellow-600"
+                      }`}>
+                      {item.level}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* ----------------------------------------End of Notification------------------------------------------- */}
+
+        <div>
+          <div className="flex justify-center max-w-full bg-gray-100 rounded-2xl p-4 mt-10">
+
+          </div>
+        </div>
+      </div>
+
+
+
+      {/* ----------------------------------------Calculation formula------------------------------------------- */}
+
       <div className="mt-10 bg-gray-300">
         <div className="mt-2">
           <div className="flex justify-center">
@@ -108,14 +174,11 @@ function Home() {
       </div>
 
       <div className="grid grid-cols-3 mt-10">
-          <MachineStatus/>
-        <div className="flex justify-center">
-          Six alert
-        </div>
-        <div className="flex justify-center">
-          alert live
-        </div>
+        <MachineStatus />
       </div>
+
+
+
     </div>
   );
 }
