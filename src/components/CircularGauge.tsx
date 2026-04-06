@@ -5,8 +5,8 @@ interface CircularGaugeProps {
   size?: number;          // ขนาด px (default 160)
   strokeWidth?: number;   // ความหนาเส้น (default 3)
   startAngle?: number;    // องศาเริ่มต้น (เช่น -90 คือเที่ยงวัน, 0 คือ 3 นาฬิกา)
-  primaryColor?: string;  // สีเส้น Progress (Tailwind Class)
-  secondaryColor?: string;// สีเส้นพื้นหลัง (Tailwind Class)
+  primaryColor?: string;  // สีเส้น Progress (Tailwind Class หรือ Hex Color)
+  secondaryColor?: string;// สีเส้นพื้นหลัง (Tailwind Class หรือ Hex Color)
   title?: string;         // ข้อความหลักตรงกลาง
   subtitle?: string;      // ข้อความรอง
 }
@@ -25,6 +25,18 @@ export const CircularGauge = ({
   // ป้องกันค่าเกิน 100 หรือต่ำกว่า 0
   const normalizedValue = Math.min(Math.max(value, 0), 100);
 
+  // ฟังก์ชันตรวจสอบและสร้าง props สำหรับสี
+  const getColorProps = (color: string) => {
+    if (color.startsWith('#')) {
+      return { style: { stroke: color } };
+    } else {
+      return { className: color };
+    }
+  };
+
+  const primaryColorProps = getColorProps(primaryColor);
+  const secondaryColorProps = getColorProps(secondaryColor);
+
   return (
     <div 
       className="relative flex items-center justify-center" 
@@ -41,8 +53,8 @@ export const CircularGauge = ({
           cy="18"
           r="16"
           fill="none"
-          className={secondaryColor}
           strokeWidth={strokeWidth}
+          {...secondaryColorProps}
         />
         
         {/* วงกลมแสดงค่า (Progress Bar) */}
@@ -51,10 +63,11 @@ export const CircularGauge = ({
           cy="18"
           r="16"
           fill="none"
-          className={`${primaryColor} transition-all duration-1000 ease-out`}
+          className="transition-all duration-1000 ease-out"
           strokeWidth={strokeWidth}
           strokeDasharray={`${normalizedValue}, 100`}
           strokeLinecap="round"
+          {...primaryColorProps}
         />
         
       </svg>

@@ -4,6 +4,7 @@ import React from "react";
 // import "react-circular-progressbar/dist/styles.css"; //
 import { CircularGauge } from "../components/CircularGauge";
 import { useNavigate } from "react-router-dom";
+import MachineStatus from "../sub_pages/MachineStatus"
 
 // ... ใน Component ของคุณ
 
@@ -15,7 +16,7 @@ function Home() {
       <div className="">
         {/* --------------------------------Gauge---------------------------------- */}
         <div className="grid grid-cols-4">
-          <div >
+          <div>
             <div className="flex justify-center">
               <div className="w-40 h-40 font-bold mt-5">
                 <CircularGauge
@@ -31,8 +32,10 @@ function Home() {
             </div>
           </div>
 
-          <div onClick={() => navigate("/availability")} // ใส่ path ที่ต้องการไป
-            className="cursor-pointer hover:opacity-80 transition-opacity group">
+          <div
+            onClick={() => navigate("/availability")} // ใส่ path ที่ต้องการไป
+            className="cursor-pointer hover:opacity-80 transition-opacity group"
+          >
             <div className="flex justify-center">
               <div className="w-40 h-40 font-bold mt-5">
                 <CircularGauge
@@ -48,8 +51,10 @@ function Home() {
             </div>
           </div>
 
-          <div onClick={() => navigate("/performance")} // ใส่ path ที่ต้องการไป
-            className="cursor-pointer hover:opacity-80 transition-opacity group">
+          <div
+            onClick={() => navigate("/performance")} // ใส่ path ที่ต้องการไป
+            className="cursor-pointer hover:opacity-80 transition-opacity group"
+          >
             <div className="flex justify-center">
               <div className="w-40 h-40 font-bold mt-5">
                 <CircularGauge
@@ -88,10 +93,28 @@ function Home() {
             </div>
           </div>
         </div>
-        {/* ----------------------------------------End of 4 Gauge------------------------------------------- */} 
+        {/* ----------------------------------------End of 4 Gauge------------------------------------------- */}
       </div>
-      <div className="mt-30">
-        <h1>OEE STATE </h1>
+
+      <div className="mt-10 bg-gray-300">
+        <div className="mt-2">
+          <div className="flex justify-center">
+            <span>Calculation formula</span>
+          </div>
+        </div>
+        <div className="flex justify-center">
+          <h1>OEE = Availability × Performance × Quality ÷ 10000 = OEE</h1>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-3 mt-10">
+          <MachineStatus/>
+        <div className="flex justify-center">
+          Six alert
+        </div>
+        <div className="flex justify-center">
+          alert live
+        </div>
       </div>
     </div>
   );
