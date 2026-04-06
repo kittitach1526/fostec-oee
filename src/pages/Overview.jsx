@@ -117,11 +117,7 @@ function Home() {
       {/* ----------------------------------------Notification------------------------------------------- */}
       <div className="grid grid-cols-2">
         <div className="max-w-full bg-white mt-10 rounded-2xl p-4">
-          {/* <div className="flex justify-start mt-10 max-w-full bg-gray-700 rounded-2xl p-2">
-          <div className="ml-10">
-            <h1 className="text-2xl text-white font-bold">ALERT</h1>
-          </div>
-        </div> */}
+
           <div>
             <div className="p-4 bg-gray-100 rounded-lg shadow-inner">
               <h2 className="text-lg font-bold mb-4">Notifications</h2>
@@ -151,10 +147,12 @@ function Home() {
         </div>
         {/* ----------------------------------------End of Notification------------------------------------------- */}
 
-        <div>
-          <div className="flex justify-center max-w-full bg-gray-100 rounded-2xl p-4 mt-10">
-
+        <div className="max-w-full bg-white mt-10 rounded-2xl p-4">
+          <div className="p-4 bg-gray-100 rounded-lg shadow-inner">
+            <span className="font-bold text-lg mb-4">Process Status</span>
           </div>
+
+          
         </div>
       </div>
 
