@@ -3,7 +3,7 @@ export default function Sidebar() {
     <div className="bg-gray-200 mt-10">
       {/* <div className="flex justify-center mt-10">Sidebar</div> */}
       {/* <br /> */}
-      <div className="ml-7">
+      <div className="ml-10">
         <ul>
           <li className="p-2">
             <a href="/">OVERVIEW</a>

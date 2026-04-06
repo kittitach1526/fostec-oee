@@ -12,7 +12,7 @@ function Home() {
   let value3 = 2;
   const navigate = useNavigate();
   return (
-    <div className="max-w-7xl mx-auto mt-0 bg-white rounded-2xl">
+    <div className="max-w-full mx-auto mt-0 bg-white rounded-2xl">
       <div className="">
         {/* --------------------------------Gauge---------------------------------- */}
         <div className="grid grid-cols-4">
