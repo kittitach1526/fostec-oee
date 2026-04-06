@@ -1,11 +1,16 @@
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
-import Home from "./pages/Home";
+import Home from "./pages/Overview";
 import About from "./About";
 import Navbar from "./components/Navbar";
 import Login from "./pages/login";
 import Sidebar from "./components/Sidebar";
+
+import Availability from "./pages/Availability";
+import Performance from "./pages/Performance";
+import Quality from "./pages/Quality";
+import Process from "./pages/Process";
 
 function App() {
   return (
@@ -26,6 +31,11 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/availability" element={<Availability/>}/>
+              <Route path="/performance" element={<Performance />} />
+              <Route path="/quality" element={<Quality />} />
+              <Route path="/process" element={<Process />} />
+              
             </Routes>
           </main>
         </div>

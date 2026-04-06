@@ -12,18 +12,21 @@ export default function Sidebar() {
 
                 <ul>
                     <li className="flex justify-center">
-                        <a href="/">Home</a>
+                        <a href="/">OVERVIEW</a>
                     </li>
                     <li className="flex justify-center">
-                        <a href="/abount">Abount</a>
-                    </li>
-                    <li className="flex justify-center">
-                        <a href="#">
-                            Performance
+                        <a href="/process">
+                            PROCESS
                         </a>
                     </li>
                     <li className="flex justify-center">
-                        <a href="#">
+                        <a href="/performance">
+                            Performance
+                        </a>
+                    </li>
+                    
+                    <li className="flex justify-center">
+                        <a href="/quality">
                             Quality
                         </a>
                     </li>

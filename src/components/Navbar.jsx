@@ -13,8 +13,8 @@ export default function Navbar() {
         </div>
       </div>
       <div className="flex gap-6 mr-30 items-center">
-        <div>menu1</div>
-        <div>menu2</div>
+        <div>Day shift</div>
+        <div>User data</div>
       </div>
     </nav>
   );
