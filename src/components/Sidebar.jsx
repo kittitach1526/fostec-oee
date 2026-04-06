@@ -12,23 +12,22 @@ export default function Sidebar() {
             <a href="/process">PROCESS</a>
           </li>
           <li className="p-2">
-            <a href="/performance">Performance</a>
-          </li>
-
-          <li className="p-2">
-            <a href="/quality">Quality</a>
+            <a href="/performance">PERFORMANCE</a>
           </li>
           <li className="p-2">
-            <a href="#">Alert</a>
+            <a href="/quality">QUALITY</a>
           </li>
           <li className="p-2">
-            <a href="#">Setting</a>
+            <a href="#">ALERT</a>
           </li>
           <li className="p-2">
-            <a href="#">Data</a>
+            <a href="#">SETTING</a>
           </li>
           <li className="p-2">
-            <a href="#">Logout</a>
+            <a href="#">DATA</a>
+          </li>
+          <li className="p-2">
+            <a href="#">LOGOUT</a>
           </li>
         </ul>
       </div>
