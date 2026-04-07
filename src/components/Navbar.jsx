@@ -3,19 +3,31 @@ import Logo from "../assets/Logo.png";
 import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   return (
-    <nav className="bg-gray-200 p-0 flex justify-between ">
-      <div className="ml-10 flex justify-center items-center">
-        <div onClick={() => navigate("/")} // ใส่ path ที่ต้องการไป
-          className="cursor-pointer hover:opacity-80 transition-opacity group">
-          <img src={Logo} alt="" className="w-50 h-10 mt-5" />
+    // 1. ใช้ w-full เพื่อให้พื้นหลัง (ถ้ามี) ยืดเต็มจอ 
+    // 2. แต่ถ้าอยากให้ตัวแถบสีเทาจำกัดแค่ 7xl ด้วย ก็ย้าย class ไปไว้ที่ <nav>
+    <div className="w-full"> 
+      <nav className="bg-gray-200 p-4 max-w-7xl mx-auto flex justify-between items-center">
+        
+        {/* ส่วน Logo */}
+        <div className="flex items-center">
+          <div
+            onClick={() => navigate("/")}
+            className="cursor-pointer hover:opacity-80 transition-opacity"
+          >
+            <img src={Logo} alt="Logo" className="h-10 w-auto" />
+          </div>
         </div>
-      </div>
-      <div className="flex gap-6 mr-50 items-center">
-        <div>Day shift</div>
-        <div>User data</div>
-      </div>
-    </nav>
+
+        {/* ส่วนเนื้อหา Navbar */}
+        <div className="flex gap-6 items-center font-medium">
+           <div>Day shift</div>
+           <div>User data</div>
+           <div className="bg-white/20 px-3 py-1 rounded">Navbar</div>
+        </div>
+
+      </nav>
+    </div>
   );
 }
